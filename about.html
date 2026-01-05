@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos | Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo"><i class="fas fa-terminal"></i> CAMARA.dev</div>
+            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html" class="active">À propos</a></li>
+                    <li><a href="Entreprise.html">Parcours Pro</a></li>
+                    <li><a href="epreuve.html">Épreuves</a></li>
+                    <li><a href="veille.html">Veille</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h1>À propos de moi</h1>
+            <div class="card" style="border-left: 4px solid var(--primary);">
+                <p>Je suis <strong>CAMARA Oussene</strong>, étudiant en deuxième année de BTS SIO, option SISR (Solutions d'Infrastructure, Systèmes et Réseaux) à l'école IPSSI Paris.</p>
+                <p>Actuellement en <strong>alternance à l'Agence Régionale de Santé (ARS) Île-de-France</strong>, je me spécialise dans le déploiement d'infrastructures sécurisées, la virtualisation et l'automatisation des processus IT.</p>
+                <p>Curieux et rigoureux, mon objectif est de devenir <strong>Administrateur Systèmes & Réseaux</strong> capable de concevoir des architectures résilientes.</p>
+                <div style="margin-top:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+                    <a href="assets/CV/camara-oussene-cv-3.pdf" target="_blank" class="btn"><i class="fas fa-file-pdf"></i> Télécharger mon CV</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Le BTS SIO Option SISR</h2>
+            <p style="margin-bottom: 2rem;">Le Brevet de Technicien Supérieur "Services Informatiques aux Organisations" est un diplôme d'État reconnu (Bac+2). L'option <strong>SISR</strong> forme des spécialistes de l'infrastructure, du réseau et de la sécurité.</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3><i class="fas fa-server"></i> Bloc 1 : Support & Maintenance (E4)</h3>
+                    <p style="font-size: 0.9rem; color: var(--accent); margin-bottom: 1rem;">"Gérer le patrimoine informatique"</p>
+                    <p>Ce bloc valide la capacité à maintenir le système en condition opérationnelle (MCO). Il couvre la gestion quotidienne de l'infrastructure.</p>
+                    <ul style="margin-top: 1rem;">
+                        <li><i class="fas fa-check-circle"></i> <strong>Gestion des incidents :</strong> Traitement des tickets, diagnostic (N1/N2), respect des SLA.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Administration :</strong> Gestion des utilisateurs, droits d'accès, GPO, Active Directory.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Supervision :</strong> Monitoring des services (Zabbix, Nagios) et gestion des sauvegardes.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fas fa-project-diagram"></i> Bloc 2 : Projet & Évolution (E5)</h3>
+                    <p style="font-size: 0.9rem; color: var(--accent); margin-bottom: 1rem;">"Répondre aux besoins d'évolution"</p>
+                    <p>Ce bloc valide la capacité à faire évoluer l'infrastructure pour répondre à de nouveaux besoins métiers. On travaille ici en "mode projet".</p>
+                    <ul style="margin-top: 1rem;">
+                        <li><i class="fas fa-check-circle"></i> <strong>Conception :</strong> Analyse du cahier des charges, choix techniques, maquettage.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Déploiement :</strong> Installation de nouveaux services (Serveurs Web, VPN, VLANs).</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Automatisation :</strong> Scripting (Bash, PowerShell) pour industrialiser les tâches.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="card" style="border: 2px solid var(--primary); background: linear-gradient(145deg, var(--bg-card), rgba(59, 130, 246, 0.1));">
+                <h2><i class="fas fa-table"></i> Mon Tableau de Synthèse (E4)</h2>
+                <div class="grid-2">
+                    <div>
+                        <p>Le <strong>Tableau de Synthèse</strong> est le document officiel attestant de la validation de mes compétences. Il cartographie l'ensemble de mes réalisations (en entreprise et en formation) face aux exigences du référentiel BTS SIO.</p>
+                        <p>Il démontre ma couverture complète des processus du Bloc 1 (Support) et du Bloc 2 (Projet), validée par mes tuteurs et professeurs.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                        <i class="fas fa-file-excel" style="font-size: 3rem; color: #107c41; margin-bottom: 1rem;"></i>
+                        <a href="assets/CV/Tableau_de_synthese_Ouss.xlsx" class="btn" style="background: #107c41; border-color: #107c41;">
+                            <i class="fas fa-download"></i> Consulter le Tableau (.xlsx)
+                        </a>
+                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">Document mis à jour pour la session 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="card" style="border: 1px solid var(--accent); background: rgba(16, 185, 129, 0.05);">
+                <h3><i class="fas fa-shield-alt"></i> La Cybersécurité : Un enjeu transversal</h3>
+                <p>Dans le référentiel du BTS SIO, la cybersécurité n'est pas une option, c'est une composante obligatoire de chaque mission. Pour chaque projet présenté, je m'assure de respecter les principes suivants :</p>
+                <div class="grid-3" style="margin-top: 1.5rem;">
+                    <div>
+                        <h4><i class="fas fa-lock"></i> Confidentialité</h4>
+                        <p style="font-size: 0.9rem;">Chiffrement des données (BitLocker, SSL/TLS), gestion stricte des droits (ACL).</p>
+                    </div>
+                    <div>
+                        <h4><i class="fas fa-user-check"></i> Intégrité</h4>
+                        <p style="font-size: 0.9rem;">Authentification forte, traçabilité des actions, logs centralisés.</p>
+                    </div>
+                    <div>
+                        <h4><i class="fas fa-history"></i> Disponibilité</h4>
+                        <p style="font-size: 0.9rem;">Redondance (RAID), plans de reprise d'activité (PRA), onduleurs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Au-delà de la technique</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h4><i class="fas fa-book-reader"></i> Veille Techno</h4>
+                    <p>L'informatique évolue vite. Je maintiens une veille constante (Feedly, Twitter, forums) pour anticiper les nouvelles menaces et outils.</p>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-users"></i> Travail d'équipe</h4>
+                    <p>Que ce soit à l'ARS ou chez WEGG, je collabore avec les équipes métiers et techniques. La communication est clé.</p>
+                </div>
+                <div class="card">
+                    <h4><i class="fas fa-file-alt"></i> Documentation</h4>
+                    <p>Une solution non documentée est une solution non maintenable. Je rédige des procédures claires pour chaque intervention.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 • CAMARA Oussene • BTS SIO SISR</p>
+    </footer>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
