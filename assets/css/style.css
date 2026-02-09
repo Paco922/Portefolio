@@ -290,3 +290,19 @@ footer {
         transform: translateY(0);
     }
 }
+
+#matrixCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Derrière le contenu */
+    opacity: 0.15; /* Effet subtil pour ne pas fatiguer les yeux */
+}
+
+.hero-animated {
+    position: relative; /* Nécessaire pour le placement du canvas */
+    background: #0a0a0a; /* Fond sombre pour faire ressortir le vert Matrix */
+    overflow: hidden;
+}
