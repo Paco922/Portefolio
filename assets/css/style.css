@@ -216,3 +216,77 @@ footer {
   .menu-toggle { display: block; }
   h1 { font-size: 2rem; }
 }
+
+/* --- AJOUTS POUR L'ANIMATION --- */
+
+/* 1. Amélioration du fond de la Hero Section */
+/* --- ANIMATIONS ET EFFETS --- */
+
+/* 1. Effet machine à écrire sur le titre */
+.typing-effect {
+    font-family: 'Fira Code', monospace;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid var(--primary);
+    width: 0;
+    animation: typing 3s steps(30, end) forwards, blink 0.8s infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
+}
+
+/* 2. Image qui flotte doucement */
+.floating-img {
+    animation: float 4s ease-in-out infinite;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* 3. Cartes de compétences interactives */
+.hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--primary);
+}
+
+/* 4. Bouton Me Contacter (Outline stylé) */
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--text-muted);
+    color: var(--text-main);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* 5. Apparition fluide des expériences (Timeline) */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
