@@ -9,152 +9,140 @@
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <div class="logo"><i class="fas fa-terminal"></i> CAMARA.dev</div>
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="about.html">À propos</a></li>
-                    <li><a href="Entreprise.html" class="active">Parcours Pro</a></li>
-                    <li><a href="epreuve.html">Épreuves</a></li>
-                    <li><a href="veille.html">Veille</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+    <div class="header-container">
+        <a href="index.html" class="logo" style="text-decoration: none;">
+            <i class="fas fa-terminal"></i> CAMARA<span>.dev</span>
+        </a>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
         </div>
-    </header>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="Entreprise.html">Parcours Pro</a></li>
+                <li><a href="epreuve.html">Épreuves</a></li>
+                <li><a href="veille.html">Veille</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <main>
         <section>
-            <h1><i class="fas fa-building"></i> Expérience Actuelle : ARS Île-de-France</h1>
-            <div class="card" style="border-left: 4px solid var(--primary); margin-bottom: 2rem;">
-                <p><strong>Agence Régionale de Santé (Île-de-France)</strong> — <em>Septembre à Août (En cours)</em></p>
-                <p>L'ARS pilote la politique de santé publique, la sécurité sanitaire et l'offre de soins pour 12 millions de Franciliens. En tant que technicien, j'assure le maintien opérationnel du parc informatique critique de l'agence.</p>
+        <h1><i class="fas fa-building"></i> Mon Parcours Pro : ARS Île-de-France</h1>
+        
+        <div class="card" style="border-left: 5px solid var(--accent); background: rgba(16, 185, 129, 0.05); margin-bottom: 2rem;">
+            <h3><i class="fas fa-bullseye"></i> Le Besoin de l'Organisation</h3>
+            <p>L'ARS assure des missions critiques de santé publique. Pour garantir la continuité du service, l'infrastructure informatique doit répondre à trois enjeux majeurs :</p>
+            <ul style="margin-top: 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Disponibilité : Réduire le temps d'arrêt des agents face aux incidents (N1/N2).</li>
+                <li><i class="fas fa-shield-alt" style="color: var(--accent);"></i> Sécurité : Garantir l'intégrité des accès via l'Active Directory National.</li>
+                <li><i class="fas fa-walking" style="color: var(--accent);"></i> Mobilité : Permettre aux agents d'être opérationnels sur le terrain (Smartphones/Laptops).</li>
+            </ul>
+        </div>
+
+        <div class="grid-2">
+            <div class="card">
+                <h3><i class="fas fa-headset"></i> Support & Gestion d'Incidents</h3>
+                <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1rem;">Réponse au besoin de continuité de service.</p>
+                <ul class="fa-ul">
+                    <li><span class="fa-li"><i class="fas fa-ticket-alt"></i></span>Gestion du cycle de vie des tickets (GLPI) : diagnostic et résolution.</li>
+                    <li><span class="fa-li"><i class="fas fa-desktop"></i></span>Maintenance matérielle : remplacement de composants défectueux et mise à jour de pilotes.</li>
+                    <li><span class="fa-li"><i class="fas fa-info-circle"></i></span>Accompagnement et information des utilisateurs sur l'avancement.</li>
+                </ul>
             </div>
 
-            <div class="grid-2">
-                <div class="card">
-                    <h3><i class="fas fa-laptop-code"></i> Déploiement & Masterisation</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Masterisation de postes <strong>Lenovo</strong> (E15, E16, L14) et HP.</li>
-                        <li><i class="fas fa-check"></i> Déploiement d'images standards (OS + Pilotes à jour).</li>
-                        <li><i class="fas fa-check"></i> Contrôles qualité post-déploiement.</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><i class="fas fa-mobile-alt"></i> Mobilité & Téléphonie</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Configuration de flotte mobile (Samsung Galaxy A16...).</li>
-                        <li><i class="fas fa-check"></i> Paramétrage MDM et sécurité des terminaux.</li>
-                        <li><i class="fas fa-check"></i> Tests de connectivité des applications métiers.</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><i class="fas fa-headset"></i> Support N1/N2</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Diagnostic incidents matériels, logiciels et réseaux.</li>
-                        <li><i class="fas fa-check"></i> Résolution problèmes d'affichage (pilotes graphiques, multi-écrans).</li>
-                        <li><i class="fas fa-check"></i> Assistance sur site et prise en main à distance.</li>
-                    </ul>
-                </div>
-
-                <div class="card">
-                    <h3><i class="fas fa-tools"></i> Maintenance & Parc</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Automatisation mises à jour (BIOS/Pilotes) via SCCM/MDT.</li>
-                        <li><i class="fas fa-check"></i> Remplacement de périphériques et maintenance préventive.</li>
-                        <li><i class="fas fa-check"></i> Gestion des tickets et fiches d'intervention.</li>
-                    </ul>
-                </div>
+            <div class="card">
+                <h3><i class="fas fa-laptop-medical"></i> Industrialisation du Parc</h3>
+                <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1rem;">Réponse au besoin d'homogénéité du parc informatique.</p>
+                <ul class="fa-ul">
+                    <li><span class="fa-li"><i class="fas fa-shuttle-van"></i></span>Masterisation PXE de postes Lenovo (E15, E16, L14) via image standard.</li>
+                    <li><span class="fa-li"><i class="fas fa-network-wired"></i></span>Intégration au domaine et vérification de la conformité logicielle.</li>
+                    <li><span class="fa-li"><i class="fas fa-mobile-alt"></i></span>Configuration de flottes mobiles (Samsung A16) avec règles de sécurité.</li>
+                </ul>
             </div>
-        </section>
+
+            <div class="card">
+                <h3><i class="fas fa-id-card-alt"></i> Gestion des Identités (AD)</h3>
+                <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1rem;">Réponse au besoin de contrôle des accès.</p>
+                <ul class="fa-ul">
+                    <li><span class="fa-li"><i class="fas fa-user-check"></i></span>Administration sur l'Active Directory National (création/désactivation).</li>
+                    <li><span class="fa-li"><i class="fas fa-key"></i></span>Gestion des droits d'accès et affectation des ressources par groupes.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3><i class="fas fa-file-signature"></i> Professionnalisation</h3>
+                <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1rem;">Réponse au besoin de traçabilité.</p>
+                <ul class="fa-ul">
+                    <li><span class="fa-li"><i class="fas fa-paste"></i></span>Rédaction de fiches d'interventions et documentation technique.</li>
+                    <li><span class="fa-li"><i class="fas fa-user-shield"></i></span>Respect strict des procédures de sécurité et confidentialité de l'ARS.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
         <hr style="border: 0; border-top: 1px solid var(--border); margin: 4rem 0;">
 
         <section>
-            <h1><i class="fas fa-history"></i> Stage Précédent : WEGG</h1>
-            <div class="card" style="margin-bottom: 2rem;">
-                <p><strong>WEGG</strong> — <em>Février à Juin 2025</em></p>
-                <p>Société spécialisée en services IT pour le Retail et l'Identité Sonore. J'y ai occupé un poste polyvalent alliant administration système, réseaux et interventions terrain.</p>
-            </div>
+    <h1><i class="fas fa-history"></i> Stage Précédent : WEGG</h1>
+    
+    <div class="card" style="border-left: 5px solid var(--primary); background: rgba(59, 130, 246, 0.05); margin-bottom: 2rem;">
+        <h3><i class="fas fa-bullseye"></i> Le Besoin de l'Organisation</h3>
+        <p>WEGG est un prestataire de services IT spécialisé dans le Retail et l'Identité Sonore. L'entreprise nécessitait une infrastructure agile et une réactivité multi-sites pour ses clients :</p>
+        <ul style="margin-top: 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+            <li><i class="fas fa-check-circle" style="color: var(--primary);"></i> Flexibilité :Virtualiser les ressources pour optimiser les coûts et le déploiement.</li>
+            <li><i class="fas fa-check-circle" style="color: var(--primary);"></i> Connectivité :Assurer des liaisons VPN sécurisées pour l'administration à distance.</li>
+            <li><i class="fas fa-check-circle" style="color: var(--primary);"></i> Efficacité :Automatiser la gestion des flux de support pour réduire les délais de traitement.</li>
+        </ul>
+    </div>
 
-            <h2 style="font-size: 1.5rem; margin-top: 2rem;">Virtualisation & Administration Serveurs</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <h3><i class="fab fa-linux"></i> Infrastructure VMware ESXi</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Déploiement de serveurs de travail sur environnement <strong>ESXi</strong>.</li>
-                        <li><i class="fas fa-check"></i> Installation serveurs web Windows + PHPMyAdmin.</li>
-                        <li><i class="fas fa-check"></i> Opérations de conversion <strong>P2V</strong> (Physical to Virtual) et V2P.</li>
-                        <li><i class="fas fa-check"></i> Configuration RAID et gestion des snapshots de sauvegarde.</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3><i class="fas fa-tachometer-alt"></i> Optimisation</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Comparatif technique Docker vs VMware.</li>
-                        <li><i class="fas fa-check"></i> Création d'ISO Windows 10 optimisé pour l'entreprise.</li>
-                        <li><i class="fas fa-check"></i> Documentation technique sur la gestion des VMs.</li>
-                    </ul>
-                </div>
-            </div>
+    <div class="grid-2">
+        <div class="card">
+            <h3><i class="fab fa-linux"></i> Virtualisation & Administration</h3>
+            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1rem;">Optimisation des ressources serveurs.</p>
+            <ul class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-server"></i></span>Gestion d'infrastructure VMware ESXiet opérations de conversion P2V/V2P.</li>
+                <li><span class="fa-li"><i class="fas fa-globe"></i></span>Déploiement de serveurs Web Windows avec environnements PHPMyAdmin.</li>
+                <li><span class="fa-li"><i class="fas fa-save"></i></span>Sécurisation des données via configurations RAID et snapshots de sauvegarde.</li>
+            </ul>
+        </div>
 
-            <h2 style="font-size: 1.5rem; margin-top: 2rem;">Infrastructure Réseau & Sécurité</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <h3><i class="fas fa-network-wired"></i> Déploiement Réseau</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Installation et configuration de switchs et bornes Wi-Fi.</li>
-                        <li><i class="fas fa-check"></i> Segmentation <strong>VLAN</strong> (Réseau Confort vs Équipements).</li>
-                        <li><i class="fas fa-check"></i> Cartographie Wi-Fi (Heatmap) avec l'outil <strong>WiFiman</strong>.</li>
-                        <li><i class="fas fa-check"></i> Règles de pare-feu personnalisées.</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3><i class="fas fa-shield-alt"></i> Services & VPN</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Déploiement VPN Ubiquiti avec protocole <strong>WireGuard</strong>.</li>
-                        <li><i class="fas fa-check"></i> Configuration NAT/PAT et accès RDP sécurisés.</li>
-                        <li><i class="fas fa-check"></i> Migration et synchronisation NAS Synology.</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="card">
+            <h3><i class="fas fa-network-wired"></i> Infrastructure & Connectivité</h3>
+            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1rem;">Sécurisation des échanges multi-sites.</p>
+            <ul class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-shield-alt"></i></span>Déploiement de VPN Ubiquiti via le protocole WireGuard.</li>
+                <li><span class="fa-li"><i class="fas fa-project-diagram"></i></span>Segmentation réseau par VLAN et cartographie Wi-Fi (Heatmap) avec WiFiman.</li>
+                <li><span class="fa-li"><i class="fas fa-lock"></i></span>Configuration NAT/PAT et sécurisation des accès RDP.</li>
+            </ul>
+        </div>
 
-            <h2 style="font-size: 1.5rem; margin-top: 2rem;">Support & Interventions Terrain</h2>
-            <div class="grid-2">
-                <div class="card">
-                    <h3><i class="fas fa-user-cog"></i> Support Technique</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Gestion de parc Windows 10 (Mises à jour, Antivirus AVG).</li>
-                        <li><i class="fas fa-check"></i> Configuration Outlook et gestion de profils.</li>
-                        <li><i class="fas fa-check"></i> Configuration d'imprimantes réseau (IP fixes).</li>
-                        <li><i class="fas fa-check"></i> Administration des comptes locaux (netplwiz).</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3><i class="fas fa-store"></i> Interventions Magasins</h3>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Installation systèmes audio (Amplis, câblage).</li>
-                        <li><i class="fas fa-check"></i> Organisation et brassage des baies réseau.</li>
-                        <li><i class="fas fa-check"></i> Configuration raccourcis RDE (Remote Desktop).</li>
-                        <li><i class="fas fa-check"></i> Résolution incidents multi-sites.</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="card">
+            <h3><i class="fas fa-tools"></i> Support & Interventions Terrain</h3>
+            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1rem;">Maintenance de la continuité de service client.</p>
+            <ul class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-store"></i></span>Interventions physiques : brassage de baies, installation de systèmes audio et câblage.</li>
+                <li><span class="fa-li"><i class="fas fa-user-cog"></i></span>Gestion de parc Windows 10 et administration des comptes locaux.</li>
+                <li><span class="fa-li"><i class="fas fa-print"></i></span>Configuration d'imprimantes réseaux et profils Outlook.</li>
+            </ul>
+        </div>
 
-            <div class="card" style="margin-top: 2rem; border-color: var(--accent);">
-                <h3><i class="fas fa-robot"></i> Projet d'Automatisation (n8n)</h3>
-                <p>Développement d'un workflow pour optimiser la gestion des tickets support :</p>
-                <ul style="margin-top: 1rem;">
-                    <li><i class="fas fa-angle-right"></i> Intégration Gmail et extraction de données.</li>
-                    <li><i class="fas fa-angle-right"></i> Classification automatique via <strong>OpenAI</strong>.</li>
-                    <li><i class="fas fa-angle-right"></i> Génération de brouillons de réponse et tableaux de bord KPI.</li>
-                </ul>
-            </div>
-        </section>
+        <div class="card" style="border-color: var(--accent);">
+            <h3><i class="fas fa-robot"></i> Intelligence Artificielle & n8n</h3>
+            <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 1rem;">Automatisation du support client.</p>
+            <ul class="fa-ul">
+                <li><span class="fa-li"><i class="fas fa-code-branch"></i></span>Création de workflows n8n pour l'extraction de tickets Gmail.</li>
+                <li><span class="fa-li"><i class="fas fa-brain"></i></span>Classification automatique des demandes via l'API OpenAI.</li>
+                <li><span class="fa-li"><i class="fas fa-chart-line"></i></span>Génération de tableaux de bord KPI et de brouillons de réponse.</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
     </main>
 

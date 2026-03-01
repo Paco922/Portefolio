@@ -10,70 +10,98 @@
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <div class="logo"><i class="fas fa-terminal"></i> CAMARA.dev</div>
-            <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Accueil</a></li>
-                    <li><a href="about.html">À propos</a></li>
-                    <li><a href="Entreprise.html">Parcours Pro</a></li>
-                    <li><a href="epreuve.html">Épreuves</a></li>
-                    <li><a href="veille.html">Veille</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+    <div class="header-container">
+        <a href="index.html" class="logo" style="text-decoration: none;">
+            <i class="fas fa-terminal"></i> CAMARA<span>.dev</span>
+        </a>
+        
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
         </div>
-    </header>
+
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="Entreprise.html">Parcours Pro</a></li>
+                <li><a href="epreuve.html">Épreuves</a></li>
+                <li><a href="veille.html">Veille</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <main>
-        <section class="hero hero-animated">
-            <canvas id="matrixCanvas"></canvas>
-            <script src="assets/js/matrix.js"></script>
-            <div class="hero-text-content" style="position: relative; z-index: 2;">
-                <h1><span class="typing-effect">Bienvenue sur mon Portfolio</span></h1>
-                <p><strong>CAMARA Oussene — Étudiant BTS SIO Option SISR</strong></p> <p>Infrastructure • Virtualisation • Réseaux • Cybersécurité</p> <div style="margin-top: 1.5rem;">
-                    <a href="assets/CV/camara-oussene-cv-3.pdf" target="_blank" class="btn"><i class="fas fa-download"></i> Télécharger CV</a> <a href="contact.html" class="btn btn-outline">Me contacter</a>
-                </div>
-                <img src="assets/image/formation-programmation-personne-travaillant-codes-ordinateur_23-2150010125.avif" alt="Illustration SIO" </div>
-        </section>
+    <section class="hero-animated">
+        <canvas id="matrixCanvas"></canvas>
+        <div class="hero-text-content">
+            <p style="text-transform: uppercase; letter-spacing: 4px; color: var(--accent); margin-bottom: 1rem;">Architecte Infrastructure</p>
+            <h1>CAMARA Oussene</h1>
+            <p>Étudiant en BTS SIO SISR spécialisé dans la conception d'architectures résilientes et la cyber-administration des services.</p>
+            <div style="margin-top: 2rem;">
+                <a href="Entreprise.html" class="btn btn-primary">Voir mon parcours</a>
+                <a href="assets/CV/camara-oussene-cv.pdf" target="_blank" class="btn btn-outline">Télécharger CV</a>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2 style="text-align: center; margin-bottom: 2rem;">Compétences Clés</h2>
-            <div class="grid-4">
-                <div class="card hover-card">
-                    <h3><i class="fas fa-network-wired"></i> Réseau</h3>
-                    <p>VLAN, Wi-Fi, Pare-feu, VPN, Routage, Commutation (Cisco/HP).</p>
-                </div>
-                <div class="card hover-card">
-                    <h3><i class="fas fa-server"></i> Système</h3>
-                    <p>Windows Server, Linux (Debian/Ubuntu), Active Directory, DNS/DHCP.</p>
-                </div>
-                <div class="card hover-card">
-                    <h3><i class="fas fa-cloud"></i> Virtualisation</h3>
-                    <p>VMware ESXi, vCenter, Docker, P2V/V2P.</p>
-                </div>
-                <div class="card hover-card">
-                    <h3><i class="fas fa-robot"></i> Automatisation</h3>
-                    <p>Scripting Bash/PowerShell, Workflow n8n.</p>
-                </div>
-            </div>
-        </section>
+    <section style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; margin-bottom: 6rem; padding: 4rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid var(--border);">
+        <div style="text-align: center;">
+            <h4 style="font-size: 2.5rem; color: #fff;">12M</h4>
+            <p style="font-size: 0.8rem; text-transform: uppercase; color: var(--accent);">Usagers ARS IdF</p>
+        </div>
+        <div style="text-align: center;">
+            <h4 style="font-size: 2.5rem; color: #fff;">1</h4>
+            <p style="font-size: 0.8rem; text-transform: uppercase; color: var(--accent);">Ans d'alternance</p>
+        </div>
+        <div style="text-align: center;">
+            <h4 style="font-size: 2.5rem; color: #fff;">15+</h4>
+            <p style="font-size: 0.8rem; text-transform: uppercase; color: var(--accent);">Projets réalisés</p>
+        </div>
+        <div style="text-align: center;">
+            <h4 style="font-size: 2.5rem; color: #fff;">SISR</h4>
+            <p style="font-size: 0.8rem; text-transform: uppercase; color: var(--accent);">Spécialisation</p>
+        </div>
+    </section>
 
-        <section>
-            <h2 style="text-align: center; margin-bottom: 2rem;">Expériences Professionnelles</h2>
-            <div class="timeline-item reveal">
-                <h3>Alternant Technicien Support @ ARS Île-de-France</h3>
-                <p class="text-muted">Septembre - Août (En cours)</p>
-                <p>Support utilisateur N1/N2, déploiement de parc (Lenovo/HP), gestion de la mobilité et maintenance au sein de l'Agence Régionale de Santé.</p>
+    <h2 class="section-title">Mes Piliers Techniques</h2>
+    <div class="grid-3">
+        <div class="expertise-card">
+            <i class="fas fa-server"></i>
+            <h3>Virtualisation & Système</h3>
+            <p>Maîtrise de <strong>VMware ESXi</strong> et <strong>vCenter</strong>. Administration avancée Windows Server (AD, GPO, DNS, DHCP) et Linux Debian/Ubuntu.</p>
+        </div>
+        <div class="expertise-card">
+            <i class="fas fa-network-wired"></i>
+            <h3>Infrastructure Réseau</h3>
+            <p>Segmentation par <strong>VLAN</strong>, routage inter-vlan, déploiement de bornes Wi-Fi Ubiquiti et configuration de VPN <strong>WireGuard</strong>.</p>
+        </div>
+        <div class="expertise-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Sécurité & Cloud</h3>
+            <p>Mise en place de <strong>Firewalls</strong>, gestion des droits d'accès au domaine national, et automatisation via <strong>n8n / PowerShell</strong>.</p>
+        </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top: 8rem;">Parcours Professionnel</h2>
+    <div class="timeline-container">
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span class="timeline-date">Septembre 2024 — Présent</span>
+                <h3>Technicien Systèmes & Réseaux (Alternance) • ARS Île-de-France</h3>
+                <p>Support N1/N2 pour 12 000 agents. Masterisation PXE (Lenovo), gestion de parc via SCCM, et administration Active Directory National. Déploiement de solutions de mobilité sécurisées.</p>
             </div>
-            <div class="timeline-item reveal">
-                <h3>Stage Technicien Réseaux @ WEGG</h3>
-                <p class="text-muted">Février - Juin 2025</p>
-                <p>Déploiement infrastructure réseau, virtualisation ESXi, support et automatisation.</p>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <span class="timeline-date">Février 2025 — Juin 2025</span>
+                <h3>Technicien Infrastructures (Stage) • WEGG</h3>
+                <p>Migration de serveurs physiques vers le virtuel (P2V). Configuration de VPN multi-sites et mise en place d'une supervision Zabbix. Automatisation de la gestion des tickets par IA (n8n).</p>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
+</main>
 
     <footer>
         <p>&copy; 2025 • CAMARA Oussene • BTS SIO SISR</p>

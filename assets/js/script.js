@@ -62,3 +62,27 @@ function drawMatrix() {
 }
 
 setInterval(drawMatrix, 33); // Environ 30 FPS
+
+// Gestion des modales d'images (Zoom)
+function openModal(imageSrc) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('img01');
+    modal.style.display = "flex";
+    modalImg.src = imageSrc;
+}
+
+// Fermer la modale
+document.getElementById('imageModal')?.addEventListener('click', function() {
+    this.style.display = "none";
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+});
