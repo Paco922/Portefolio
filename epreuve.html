@@ -6,144 +6,433 @@
     <title>Épreuves BTS | Portfolio</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .ep-card {
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .ep-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            padding: 1.5rem 1.8rem;
+            border-bottom: 1px solid var(--border);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .ep-code {
+            flex-shrink: 0;
+            width: 52px;
+            height: 52px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: 900;
+            font-family: 'Fira Code', monospace;
+        }
+
+        .ep-code-e4 { background: rgba(59,130,246,0.12); color: #60a5fa; border: 1px solid rgba(59,130,246,0.25); }
+        .ep-code-e5 { background: rgba(16,185,129,0.12); color: #34d399; border: 1px solid rgba(16,185,129,0.25); }
+        .ep-code-e6 { background: rgba(239,68,68,0.12);  color: #f87171; border: 1px solid rgba(239,68,68,0.25); }
+
+        .ep-card-header h2 {
+            margin: 0 0 0.3rem;
+            font-size: 1.05rem;
+            color: #e2e8f0;
+        }
+
+        .ep-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 0;
+        }
+
+        .ep-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.03);
+            color: var(--text-muted, #8b949e);
+        }
+
+        .ep-badge i { font-size: 0.6rem; }
+
+        .ep-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--border);
+        }
+
+        .ep-col {
+            background: #080d12;
+            padding: 1.5rem 1.8rem;
+        }
+
+        .ep-col h4 {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted, #8b949e);
+            margin: 0 0 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .ep-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .ep-col ul li {
+            font-size: 0.84rem;
+            color: #94a3b8;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.55rem;
+            line-height: 1.5;
+        }
+
+        .ep-col ul li i {
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+            font-size: 0.65rem;
+            color: var(--accent, #10b981);
+        }
+
+        .ep-tip {
+            grid-column: 1 / -1;
+            background: rgba(16,185,129,0.04);
+            border-top: 1px solid rgba(16,185,129,0.15);
+            padding: 1rem 1.8rem;
+            font-size: 0.82rem;
+            color: #64748b;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.7rem;
+            line-height: 1.6;
+        }
+
+        .ep-tip i { color: #34d399; flex-shrink: 0; margin-top: 0.1rem; font-size: 0.75rem; }
+        .ep-tip strong { color: #34d399; }
+
+        /* recap table */
+        .recap-wrap {
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin-top: 1.5rem;
+        }
+
+        .recap-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .recap-table thead tr {
+            background: rgba(59,130,246,0.06);
+        }
+
+        .recap-table th {
+            padding: 0.8rem 1.2rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--primary, #3b82f6);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .recap-table td {
+            padding: 0.9rem 1.2rem;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .recap-table tr:last-child td { border-bottom: none; }
+        .recap-table tbody tr:hover { background: rgba(255,255,255,0.02); }
+
+        @media (max-width: 650px) {
+            .ep-body { grid-template-columns: 1fr; }
+            .ep-tip { grid-column: 1; }
+        }
+    </style>
 </head>
 <body>
     <header>
-    <div class="header-container">
-        <a href="index.html" class="logo" style="text-decoration: none;">
-            <i class="fas fa-terminal"></i> CAMARA<span>.dev</span>
-        </a>
-        
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fas fa-bars"></i>
+        <div class="header-container">
+            <a href="index.html" class="logo" style="text-decoration: none;">
+                <i class="fas fa-terminal"></i> CAMARA<span>.dev</span>
+            </a>
+            <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="about.html">À propos</a></li>
+                    <li><a href="Entreprise.html">Parcours Pro</a></li>
+                    <li><a href="projets.html">Projets</a></li>
+                    <li><a href="epreuve.html" class="active">Épreuves</a></li>
+                    <li><a href="veille.html">Veille</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="about.html">À propos</a></li>
-                <li><a href="Entreprise.html">Parcours Pro</a></li>
-                <li><a href="epreuve.html">Épreuves</a></li>
-                <li><a href="veille.html">Veille</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    </header>
 
     <main>
-    <section class="hero" style="padding: 2rem 0;">
-        <h1><i class="fas fa-graduation-cap"></i> Les Épreuves Professionnelles</h1>
-        <p>Présentation détaillée des trois blocs de compétences du BTS SIO option SISR (Session 2026).</p>
-    </section>
+        <section class="hero" style="padding: 2rem 0 3rem;">
+            <h1><i class="fas fa-graduation-cap"></i> Les Épreuves Professionnelles</h1>
+            <p>Présentation des trois épreuves du BTS SIO option SISR — format, déroulement et compétences évaluées. (Session 2026)</p>
+        </section>
 
-    <section class="card" style="margin-bottom: 3rem; border-left: 5px solid var(--primary);">
-        <div style="border-bottom: 1px solid var(--border); padding-bottom:1rem; margin-bottom:1.5rem;">
-            <h2 style="color: var(--primary);">Bloc n°1 : Support et mise à disposition de services informatiques</h2>
-            <p><strong>Objectif :</strong> Gérer le patrimoine, répondre aux incidents et assurer la présence en ligne.</p>
-        </div>
-        <div class="grid-2">
-            <div>
-                <h3><i class="fas fa-user-shield"></i> Compétences</h3>
-                <ul class="fa-ul" style="margin-left: 1.5rem; font-size: 0.9rem;">
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Gérer le patrimoine informatique et répondre aux incidents.</li>
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Développer la présence en ligne de l'entreprise.</li>
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Mettre à disposition des utilisateurs un service informatique.</li>
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Organiser son propre développement professionnel.</li>
-                </ul>
+        <!-- E4 -->
+        <div class="ep-card">
+            <div class="ep-card-header">
+                <div class="ep-code ep-code-e4">E4</div>
+                <div>
+                    <h2>Support et mise à disposition de services informatiques</h2>
+                    <div class="ep-meta">
+                        <span class="ep-badge"><i class="fas fa-microphone"></i> Oral — 40 min</span>
+                        <span class="ep-badge"><i class="fas fa-calculator"></i> Coeff. 4</span>
+                        <span class="ep-badge"><i class="fas fa-file-alt"></i> Portefeuille de compétences</span>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h3><i class="fas fa-book"></i> Savoirs associés</h3>
-                <p style="font-size: 0.85rem; color: var(--text-muted);">
-                    Systèmes d'exploitation (droits d'accès), techniques de sauvegarde, help desk, bases de la programmation Web, référencement, e-réputation et veille informationnelle.
-                </p>
+            <div class="ep-body">
+                <div class="ep-col">
+                    <h4><i class="fas fa-info-circle"></i> Déroulement</h4>
+                    <ul>
+                        <li><i class="fas fa-circle"></i> Le candidat présente un <strong>portefeuille de situations professionnelles</strong> réalisées en entreprise.</li>
+                        <li><i class="fas fa-circle"></i> <strong>~10 min</strong> de présentation du tableau de synthèse.</li>
+                        <li><i class="fas fa-circle"></i> <strong>~30 min</strong> de questionnement par le jury sur les missions.</li>
+                    </ul>
+                </div>
+                <div class="ep-col">
+                    <h4><i class="fas fa-check-square"></i> Compétences évaluées</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Gérer le patrimoine informatique et répondre aux incidents.</li>
+                        <li><i class="fas fa-check"></i> Mettre à disposition un service informatique.</li>
+                        <li><i class="fas fa-check"></i> Développer sa présence en ligne et son développement pro.</li>
+                    </ul>
+                </div>
+                <div class="ep-tip">
+                    <i class="fas fa-lightbulb"></i>
+                    <span><strong>Conseil :</strong> Entraînez-vous à résumer chaque situation en 2 min : contexte → actions → résultat → aspect cybersécurité. Le jury vérifie que vous avez réellement réalisé les missions.</span>
+                </div>
             </div>
         </div>
-    </section>
 
-    <section class="card" style="margin-bottom: 3rem; border-left: 5px solid var(--accent);">
-        <div style="border-bottom: 1px solid var(--border); padding-bottom:1rem; margin-bottom:1.5rem;">
-            <h2 style="color: var(--accent);">Bloc n°2 : Administration des systèmes et des réseaux</h2>
-            <p><strong>Objectif :</strong> Concevoir, tester et superviser l'infrastructure réseau.</p>
-        </div>
-        <div class="grid-2">
-            <div>
-                <h3><i class="fas fa-network-wired"></i> Compétences</h3>
-                <ul class="fa-ul" style="margin-left: 1.5rem; font-size: 0.9rem;">
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Concevoir une infrastructure réseau adaptée aux besoins.</li>
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Tester et maintenir l'infrastructure en exploitation.</li>
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Superviser les services et les systèmes.</li>
-                </ul>
+        <!-- E5 -->
+        <div class="ep-card">
+            <div class="ep-card-header">
+                <div class="ep-code ep-code-e5">E5</div>
+                <div>
+                    <h2>Administration des systèmes et des réseaux <span style="font-size:0.85rem; color:var(--text-muted,#8b949e);">(SISR)</span></h2>
+                    <div class="ep-meta">
+                        <span class="ep-badge"><i class="fas fa-microphone"></i> Oral — 40 min</span>
+                        <span class="ep-badge"><i class="fas fa-laptop"></i> 1h30 de préparation sur poste</span>
+                        <span class="ep-badge"><i class="fas fa-calculator"></i> Coeff. 4</span>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h3><i class="fas fa-microchip"></i> Savoirs associés</h3>
-                <p style="font-size: 0.85rem; color: var(--text-muted);">
-                    Architecture réseaux (protocoles, routage), standards de disponibilité, technologies de sauvegarde, diagnostics d'incidents et rédaction de cahiers des charges.
-                </p>
+            <div class="ep-body">
+                <div class="ep-col">
+                    <h4><i class="fas fa-info-circle"></i> Déroulement</h4>
+                    <ul>
+                        <li><i class="fas fa-circle"></i> <strong>1h30 sur poste</strong> : analyse d'un dossier technique d'infrastructure fictive, rédaction des réponses.</li>
+                        <li><i class="fas fa-circle"></i> <strong>~15 min</strong> de présentation orale des solutions proposées.</li>
+                        <li><i class="fas fa-circle"></i> <strong>~25 min</strong> d'entretien : le jury questionne les choix techniques.</li>
+                    </ul>
+                </div>
+                <div class="ep-col">
+                    <h4><i class="fas fa-check-square"></i> Compétences évaluées</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Concevoir une infrastructure réseau adaptée aux besoins.</li>
+                        <li><i class="fas fa-check"></i> Tester, maintenir et superviser l'infrastructure.</li>
+                        <li><i class="fas fa-check"></i> Sécuriser les accès et garantir la haute disponibilité.</li>
+                    </ul>
+                </div>
+                <div class="ep-tip">
+                    <i class="fas fa-lightbulb"></i>
+                    <span><strong>Conseil :</strong> Structurez toujours votre analyse : contexte → besoins → solution → sécurité → supervision. Justifiez chaque choix technique, le jury attend une argumentation, pas juste une réponse.</span>
+                </div>
             </div>
         </div>
-    </section>
 
-    <section class="card" style="margin-bottom: 3rem; border-left: 5px solid #e11d48;">
-        <div style="border-bottom: 1px solid var(--border); padding-bottom:1rem; margin-bottom:1.5rem;">
-            <h2 style="color: #e11d48;">Bloc n°3 : Cybersécurité des services informatiques</h2>
-            <p><strong>Objectif :</strong> Protéger les données, les équipements et assurer la résilience face aux attaques.</p>
-        </div>
-        <div class="grid-2">
-            <div>
-                <h3><i class="fas fa-user-lock"></i> Compétences</h3>
-                <ul class="fa-ul" style="margin-left: 1.5rem; font-size: 0.9rem;">
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Protéger les données à caractère personnel.</li>
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Sécuriser les équipements et les usages des utilisateurs.</li>
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Garantir la disponibilité des données face aux cyberattaques.</li>
-                    <li><span class="fa-li"><i class="fas fa-check"></i></span>Assurer la cybersécurité d'une infrastructure réseau ou d'un service.</li>
-                </ul>
+        <!-- E6 -->
+        <div class="ep-card">
+            <div class="ep-card-header">
+                <div class="ep-code ep-code-e6">E6</div>
+                <div>
+                    <h2>Cybersécurité des services informatiques <span style="font-size:0.85rem; color:var(--text-muted,#8b949e);">(SISR)</span></h2>
+                    <div class="ep-meta">
+                        <span class="ep-badge"><i class="fas fa-pen-alt"></i> Écrit — 4 heures</span>
+                        <span class="ep-badge"><i class="fas fa-file-contract"></i> Dossier documentaire fourni</span>
+                        <span class="ep-badge"><i class="fas fa-calculator"></i> Coeff. 4</span>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h3><i class="fas fa-user-shield"></i> Savoirs associés</h3>
-                <p style="font-size: 0.85rem; color: var(--text-muted);">
-                    Réglementation (RGPD), protection juridique, lutte contre la cybercriminalité, sûreté des réseaux, technologies de sécurité et responsabilité de l'administrateur.
-                </p>
+            <div class="ep-body">
+                <div class="ep-col">
+                    <h4><i class="fas fa-info-circle"></i> Déroulement</h4>
+                    <ul>
+                        <li><i class="fas fa-circle"></i> Un <strong>dossier documentaire</strong> présente une organisation confrontée à une problématique de cybersécurité.</li>
+                        <li><i class="fas fa-circle"></i> Questions techniques : analyse de vulnérabilités, mesures correctives, configuration sécurisée.</li>
+                        <li><i class="fas fa-circle"></i> Questions réglementaires : RGPD, obligations de l'administrateur, responsabilités légales.</li>
+                    </ul>
+                </div>
+                <div class="ep-col">
+                    <h4><i class="fas fa-check-square"></i> Compétences évaluées</h4>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Protéger les données personnelles (RGPD, notification CNIL).</li>
+                        <li><i class="fas fa-check"></i> Sécuriser les équipements et identifier les menaces.</li>
+                        <li><i class="fas fa-check"></i> Garantir la disponibilité face aux cyberattaques.</li>
+                    </ul>
+                </div>
+                <div class="ep-tip">
+                    <i class="fas fa-lightbulb"></i>
+                    <span><strong>Conseil :</strong> Lisez tout le dossier avant de répondre (15 min). Structurez chaque réponse et maîtrisez la trilogie CIA : <strong>Confidentialité, Intégrité, Disponibilité</strong> — associez chaque mesure à l'un de ces trois piliers.</span>
+                </div>
             </div>
         </div>
-    </section>
 
-    <section>
-    <h2><i class="fas fa-clipboard-list"></i> Récapitulatif des Épreuves (SISR)</h2>
-    <div class="card" style="padding: 0; overflow: hidden;">
-        <table style="width: 100%; border-collapse: collapse; text-align: left;">
-            <thead>
-                <tr style="background: var(--bg-hover); color: var(--primary);">
-                    <th style="padding: 1rem; border-bottom: 2px solid var(--border);">Code</th>
-                    <th style="padding: 1rem; border-bottom: 2px solid var(--border);">Libellé de l'épreuve</th>
-                    <th style="padding: 1rem; border-bottom: 2px solid var(--border);">Durée</th>
-                    <th style="padding: 1rem; border-bottom: 2px solid var(--border);">Format</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding: 1rem; border-bottom: 1px solid var(--border);"><strong>E4</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid var(--border);">Support et mise à disposition des services informatiques</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid var(--border);">40 min</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid var(--border);">Oral</td>
-                </tr>
-                <tr style="background: rgba(59, 130, 246, 0.05);">
-                    <td style="padding: 1rem; border-bottom: 1px solid var(--border);"><strong>E5</strong></td>
-                    <td style="padding: 1rem; border-bottom: 1px solid var(--border);">Administration des systèmes et des réseaux (SISR)</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid var(--border);">40 min (1h30 prépa)</td>
-                    <td style="padding: 1rem; border-bottom: 1px solid var(--border);">Oral</td>
-                </tr>
-                <tr>
-                    <td style="padding: 1rem;"><strong>E6</strong></td>
-                    <td style="padding: 1rem;">Cybersécurité des services informatiques (SISR)</td>
-                    <td style="padding: 1rem;">4h</td>
-                    <td style="padding: 1rem;">Écrit</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-</main>
+        <!-- BLOCS DE COMPÉTENCES -->
+        <section style="margin-top: 3rem; margin-bottom: 3rem;">
+            <h2><i class="fas fa-layer-group"></i> Les Blocs de Compétences</h2>
+            <p style="margin-bottom: 2rem;">Le BTS SIO SISR est structuré autour de trois blocs de compétences, chacun rattaché à une épreuve professionnelle.</p>
+
+            <div class="card" style="margin-bottom: 1.5rem; border-left: 5px solid var(--primary);">
+                <div style="border-bottom: 1px solid var(--border); padding-bottom:1rem; margin-bottom:1.5rem;">
+                    <h2 style="color: var(--primary);">Bloc n°1 : Support et mise à disposition de services informatiques</h2>
+                    <p><strong>Objectif :</strong> Gérer le patrimoine, répondre aux incidents et assurer la présence en ligne.</p>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <h3><i class="fas fa-user-shield"></i> Compétences</h3>
+                        <ul class="fa-ul" style="margin-left: 1.5rem; font-size: 0.9rem;">
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Gérer le patrimoine informatique et répondre aux incidents.</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Développer la présence en ligne de l'entreprise.</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Mettre à disposition des utilisateurs un service informatique.</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Organiser son propre développement professionnel.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3><i class="fas fa-book"></i> Savoirs associés</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">
+                            Systèmes d'exploitation (droits d'accès), techniques de sauvegarde, help desk, bases de la programmation Web, référencement, e-réputation et veille informationnelle.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-bottom: 1.5rem; border-left: 5px solid var(--accent);">
+                <div style="border-bottom: 1px solid var(--border); padding-bottom:1rem; margin-bottom:1.5rem;">
+                    <h2 style="color: var(--accent);">Bloc n°2 : Administration des systèmes et des réseaux</h2>
+                    <p><strong>Objectif :</strong> Concevoir, tester et superviser l'infrastructure réseau.</p>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <h3><i class="fas fa-network-wired"></i> Compétences</h3>
+                        <ul class="fa-ul" style="margin-left: 1.5rem; font-size: 0.9rem;">
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Concevoir une infrastructure réseau adaptée aux besoins.</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Tester et maintenir l'infrastructure en exploitation.</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Superviser les services et les systèmes.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3><i class="fas fa-microchip"></i> Savoirs associés</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">
+                            Architecture réseaux (protocoles, routage), standards de disponibilité, technologies de sauvegarde, diagnostics d'incidents et rédaction de cahiers des charges.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="border-left: 5px solid #e11d48;">
+                <div style="border-bottom: 1px solid var(--border); padding-bottom:1rem; margin-bottom:1.5rem;">
+                    <h2 style="color: #e11d48;">Bloc n°3 : Cybersécurité des services informatiques</h2>
+                    <p><strong>Objectif :</strong> Protéger les données, les équipements et assurer la résilience face aux attaques.</p>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <h3><i class="fas fa-user-lock"></i> Compétences</h3>
+                        <ul class="fa-ul" style="margin-left: 1.5rem; font-size: 0.9rem;">
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Protéger les données à caractère personnel.</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Sécuriser les équipements et les usages des utilisateurs.</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Garantir la disponibilité des données face aux cyberattaques.</li>
+                            <li><span class="fa-li"><i class="fas fa-check"></i></span>Assurer la cybersécurité d'une infrastructure réseau ou d'un service.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3><i class="fas fa-user-shield"></i> Savoirs associés</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-muted);">
+                            Réglementation (RGPD), protection juridique, lutte contre la cybercriminalité, sûreté des réseaux, technologies de sécurité et responsabilité de l'administrateur.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECAP TABLE -->
+        <section style="margin-top: 3rem; margin-bottom: 5rem;">
+            <h2><i class="fas fa-clipboard-list"></i> Récapitulatif des Épreuves</h2>
+            <div class="recap-wrap">
+                <table class="recap-table">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>Libellé</th>
+                            <th>Format</th>
+                            <th>Durée</th>
+                            <th>Coeff.</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong style="color:#60a5fa;">E4</strong></td>
+                            <td>Support et mise à disposition des services informatiques</td>
+                            <td><span style="color:#a78bfa; font-weight:600;"><i class="fas fa-microphone"></i> Oral</span></td>
+                            <td>40 min</td>
+                            <td><strong>4</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color:#34d399;">E5</strong></td>
+                            <td>Administration des systèmes et des réseaux (SISR)</td>
+                            <td><span style="color:#a78bfa; font-weight:600;"><i class="fas fa-microphone"></i> Oral</span></td>
+                            <td>1h30 prépa + 40 min</td>
+                            <td><strong>4</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color:#f87171;">E6</strong></td>
+                            <td>Cybersécurité des services informatiques (SISR)</td>
+                            <td><span style="color:#fb923c; font-weight:600;"><i class="fas fa-pen-alt"></i> Écrit</span></td>
+                            <td>4 heures</td>
+                            <td><strong>4</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 • CAMARA Oussene • BTS SIO SISR</p>
